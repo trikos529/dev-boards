@@ -6,7 +6,6 @@ import pyautogui
 id_toggle = False
 class_toggle = False
 
-
 async def main():
     async with websockets.serve(handle_droidpad, "0.0.0.0", 8765):
         print(f"WebSocket server running on ws://0.0.0.0:8765")
@@ -14,7 +13,7 @@ async def main():
         await asyncio.Future()
 
 async def handle_droidpad(websocket):
-    global id_toggle, class_toggle, classification, basic_tags, video_audio_tags, double_quotes, css_properties, typescript_methods
+    global id_toggle, class_toggle
     print("Device Linked!")
     try:
         async for message in websocket:
@@ -29,7 +28,6 @@ async def handle_droidpad(websocket):
               print("Device disconnected")
     except Exception as e:
         print(f"Error in connection: {e}")
-
 if __name__ == "__main__":
     try:
         asyncio.run(main())
