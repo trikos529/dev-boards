@@ -76,7 +76,7 @@ async def handle_droidpad(websocket):
                 # TS Tags
                 elif btn_id == "get-element-id":
                     pyautogui.write(f"=document.getElementById({double_quotes});")
-                elif btn_id == "get-elemnent-class":  # Note: typo in "element"
+                elif btn_id == "get-element-class": 
                     pyautogui.write(f"= document.getElementsByClassName({double_quotes});")
                 elif btn_id == "get-element-type":
                     pyautogui.write(f"= document.getElementsByTagName({double_quotes});")
@@ -99,4 +99,4 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\nServer stopped by user")
+        print("\nServer stopped by user
