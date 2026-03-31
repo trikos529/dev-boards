@@ -3,9 +3,6 @@ import websockets
 import json
 import pyautogui
 
-id_toggle = False
-class_toggle = False
-
 async def main():
     async with websockets.serve(handle_droidpad, "0.0.0.0", 8765):
         print(f"WebSocket server running on ws://0.0.0.0:8765")
@@ -13,7 +10,6 @@ async def main():
         await asyncio.Future()
 
 async def handle_droidpad(websocket):
-    global id_toggle, class_toggle
     print("Device Linked!")
     try:
         async for message in websocket:
